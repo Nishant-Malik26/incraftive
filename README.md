@@ -3,7 +3,8 @@
 https://ecomm.dotvik.com/
 
 ## For starting the project
-
+run git clone https://github.com/Nishant-Malik26/incraftive.git
+run cd incraftive
 Run npm i
 Run npm start
 
