@@ -3,7 +3,12 @@ import React from 'react';
 
 function TopCarousel() {
   return (
-    <Carousel autoplay>
+    <Carousel
+      autoplay
+      style={{
+        marginTop: '-2.7px',
+      }}
+    >
       <div>
         <img
           src='https://ecomm.dotvik.com/dist/assets/homePageSliderImg/Hottest-winter-collection.jpg'

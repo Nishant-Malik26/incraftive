@@ -7,3 +7,15 @@
     font-weight: 500;
     color: #1c212c;
 }
+
+.border-btm {
+    padding-bottom: 5px;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    border-bottom: 1px solid red;
+}
+.border-btm-full {
+    padding-bottom: 2px;
+    border-bottom: 2.4px solid rgb(154, 61, 61);
+}
+

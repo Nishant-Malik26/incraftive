@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { ConfigProvider, Menu, Row, Col } from 'antd';
 import axios from 'axios';
+import { AiOutlineSearch } from 'react-icons/ai';
+import { AiOutlineUser } from 'react-icons/ai';
+import { Avatar, Badge, Space } from 'antd';
 
 import '../../style.css';
 function Navbar() {
-  const [itemmmmms, setItemmmmms] = useState([]);
+  const [items, setItems] = useState([]);
   const nnewArray = async (arrayToMap) => {
     const promises = arrayToMap.map(async (item) => {
       const category = item?.urlKey;
@@ -71,7 +73,7 @@ function Navbar() {
           };
         });
         const newItem = await nnewArray(newData);
-        setItemmmmms(newItem);
+        setItems(newItem);
       })
       .catch((err) => {
         console.log(err);
@@ -79,19 +81,17 @@ function Navbar() {
   }, []);
   return (
     <>
-      {itemmmmms.length > 0 && (
+      {items.length > 0 && (
         <>
           <nav className='navbar'>
-            <a href='/'>
-              <img
-                rel='icon'
-                src='https://ecomm.dotvik.com/dist/assets/logo.jpg'
-                alt='loading'
-              ></img>
-            </a>
-            {itemmmmms.map((item) => {
+            <img
+              rel='icon'
+              src='https://ecomm.dotvik.com/dist/assets/logo.jpg'
+              alt='loading'
+            ></img>
+            {items.map((item) => {
               return (
-                <div key={item.key} className='d'>
+                <div key={item.key} className='d align-left'>
                   <button className='d-btn'>{item.label}</button>
                   <div className='d-content'>
                     <div className='row'>
@@ -119,7 +119,21 @@ function Navbar() {
                 </div>
               );
             })}
+            <div className='align-right'>
+              <Space style={{ marginRight: '12px' }} size='middle'>
+                <AiOutlineSearch size={25} />
+                <AiOutlineUser size={25} />
+                Login
+                <Badge count={5}>
+                  <Avatar shape='square' size={'small'} />
+                </Badge>
+                <Badge count={0} showZero>
+                  <Avatar shape='square' size={'small'} />
+                </Badge>
+              </Space>
+            </div>
           </nav>
+
           <marquee>Beware of fake offers and fraudulent callers</marquee>
         </>
       )}

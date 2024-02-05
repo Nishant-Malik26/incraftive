@@ -5,6 +5,8 @@ import TopCarousel from '../TopCarousel/TopCarousel';
 import TopPickings from '../TopPickings/TopPickings.';
 import TopOffers from '../TopOffers/TopOffers';
 import Sections from '../Sections/Sections';
+import SpotlightSection from '../SpotlightSection/SpotlightSection';
+import Footer from '../Footer/Footer';
 
 function Layout() {
   const SECTION_INFO = [
@@ -60,6 +62,8 @@ function Layout() {
       {SECTION_INFO.map((info) => (
         <Sections info={info} />
       ))}
+      <SpotlightSection />
+      <Footer />
       {/* </Col> */}
       {/* </Row> */}
     </>

@@ -5,12 +5,14 @@
 	font-family: sans-serif;
 }
 .navbar {
-    line-height: 1.6px;
+    line-height: 2.5px;
 	overflow: hidden;
 	background: white;
     border-bottom: solid black 1px;
     display: flex;
     align-items: center;
+	height: 57px;
+	justify-content: space-between;
 }
 .navbar a {
 	float: left;
@@ -19,13 +21,11 @@
 	text-align: center;
 	padding: 12px 18px;
 	text-decoration: none;
-	text-transform: uppercase;
 }
 .d {
     display: flex;
 	float: left;
 	overflow: hidden;
-    
 }
 .d .d-btn {
     display: flex;
@@ -57,62 +57,57 @@
 }
 .d:hover .d-content {
 	display: block;
-    /*box-sizing: border-box;
-    /* display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around; */
-    /* display: flex; */
-    /* justify-items: space-between; */
-    /* align-items: right; */
+  
 }
 .column {
     display: inline-block;
 	padding: 5px;
 	background: white;
-	height: 550px;
-    /* width : 220px; */
-    /* max-width: max-content; */
-    /* width: ; */
+	height: max-content;
     flex-direction: column;
     justify-items: space-between;
     align-items: left;
-    /* justify-content: center; */
 }
 .column a {
     text-decoration: none;
-    font-size: x-small;
+    font-size: 13px;
 	display: block;
 	float: none;
 	color: black;
 	text-align: left;
+	transition: transform 0.3s ease-in-out;
+	font-weight: 200;
+	text-transform: uppercase;
 }
 .column p {
 	color: #742424;
 	padding: 10px;
-    font-size: 14;
-    margin-bottom: 15px;
+    font-size: 14px;
+    margin-bottom: 5px;
     margin-top: 10px;
 }
 .column a:hover {
-	color: white;
-	background: #373737;
+	transform: translateX(5px);
+	border: 0;
 }
 .row {
-    display: flex;
+	display: flex;
+	background-color: white;
+    justify-content: space-around;
     margin-top: 35px;
 }
 .row:after {
-	/* content: ''; */
 	display: flex;
     justify-content: space-between;
-	/* clear: both; */
     width :  100%;
 }
 
 
 
-a img {
-    width : 34px;
+.navbar img {
+    width : 35px;
+	cursor: pointer;
+	margin-left: 1rem;
 }
 
 
@@ -120,4 +115,17 @@ a img {
 marquee {
     background-color: black;
     color : white;
+}
+
+
+
+
+.align-left {
+	margin-right: 5px;
+}
+.align-right {
+	margin-left: auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
