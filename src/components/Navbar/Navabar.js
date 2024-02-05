@@ -7,7 +7,12 @@ import { Avatar, Badge, Space } from 'antd';
 import '../../style.css';
 function Navbar() {
   const [items, setItems] = useState([]);
-  const nnewArray = async (arrayToMap) => {
+  // Approach
+  // Initially tried to use Antd, So to render menu converted the data in {label : "String", key : "UniqueIdentifier" , children : []}
+  // format
+  // Due to lot of customization needed used custom navbar
+  // In interest of time used the used the transformed data to render navbar
+  const newArray = async (arrayToMap) => {
     const promises = arrayToMap.map(async (item) => {
       const category = item?.urlKey;
       return await axios
@@ -23,7 +28,6 @@ function Navbar() {
             .map((mappedSubcategory) => {
               return {
                 type: 'group',
-
                 label: mappedSubcategory?.categoryName,
                 key: mappedSubcategory?.id,
                 children: data?.childCategory
@@ -72,7 +76,7 @@ function Navbar() {
             key: menuItems.id,
           };
         });
-        const newItem = await nnewArray(newData);
+        const newItem = await newArray(newData);
         setItems(newItem);
       })
       .catch((err) => {
@@ -95,8 +99,6 @@ function Navbar() {
                   <button className='d-btn'>{item.label}</button>
                   <div className='d-content'>
                     <div className='row'>
-                      {/* <Row>
-                      <Col xs={24} sm={24} md={24}> */}
                       {item.children.map((subcategory, i) => {
                         return (
                           <div key={subcategory + i} className='column'>
@@ -112,8 +114,6 @@ function Navbar() {
                           </div>
                         );
                       })}
-                      {/* </Col>
-                    </Row> */}
                     </div>
                   </div>
                 </div>

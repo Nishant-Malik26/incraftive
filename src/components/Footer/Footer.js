@@ -9,6 +9,7 @@ import {
 
 import './Footer.css';
 function Footer() {
+  // In interest of time copied same data over
   return (
     <div className='footer-container'>
       <Row>

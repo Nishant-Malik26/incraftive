@@ -18,7 +18,7 @@ function SpotlightSection() {
               maxWidth: '100%',
             }}
             src='https://ecomm.dotvik.com/dist/images/bannerTemp/classic-classy.jpeg'
-            alt='loding'
+            alt='loading'
           ></img>
         </Col>
       </Row>
@@ -31,7 +31,7 @@ function SpotlightSection() {
               maxWidth: '100%',
             }}
             src='https://ecomm.dotvik.com/dist/images/bannerTemp/classic-classy.jpeg'
-            alt='loding'
+            alt='loading'
           ></img>
         </Col>
       </Row>
